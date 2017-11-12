@@ -1,0 +1,1 @@
+Use git init only one time for every project
