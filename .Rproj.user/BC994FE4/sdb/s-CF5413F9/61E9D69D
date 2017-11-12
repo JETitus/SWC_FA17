@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "# This script computes the average GDP for Albania using the gapminder data\n\n# location of the data\nfileName <- '../Data/gapminder.txt'\n\n# read the data file\ngapminder <- read.table(fileName, header=TRUE)\n\n# select the rows where the country is Albania and store it in albaniaData\nalbaniaData <- gapminder[gapminder$country == 'Albania',]\n\n# select the column containing the GDP per capita from the Albania data\nalbaniaGdp <- albaniaData$gdpPercap\n\n# compute the average GDP value\nalbaniaAverageGdp <- mean(albaniaGdp)\n\n# print a message with the result of our computation\nprint(paste('The average GDP of Albania is', albaniaAverageGdp))\n\n# This script computes the average GDP for Albania using the gapminder data\n\n# location of the data\nfileName <- '../Data/gapminder.txt'\n\n# read the data file\ngapminder <- read.table(fileName, header=TRUE)\n\n# create a variable to store a country name\ncountryName <- 'Albania'\n\n# select the rows where the country is countryName and store it in albaniaData\nalbaniaData <- gapminder[gapminder$country == countryName,]     # note the change here\n\n# select the column containing the GDP per capita from the Albania data\nalbaniaGdp <- albaniaData$gdpPercap\n\n# compute the average GDP value\nalbaniaAverageGdp <- mean(albaniaGdp)\n\n# print a message with the result of our computation\nprint(paste('The average GDP of', countryName, 'is', albaniaAverageGdp)) # and the change here\n\n\n# This script computes the average GDP for a country using the gapminder data\n\n# clear old variables\nrm(list=ls())\n\n# location of the data\nfileName <- '../Data/gapminder.txt'\n\n# read the data file\ngapminder <- read.table(fileName, header=TRUE)\n\ngetAverageGdpPerCapita <- function(country, gapminder) {\n  # extract gdpPercap from the gapminder data for the specified country.\n  \n  selectedCountryData <- gapminder[gapminder$country == country, 'gdpPercap']\n  \n  mean(selectedCountryData)\n}\n\ngdpUSA <- getAverageGdpPerCapita('United_States', gapminder)\ngdpCanada <- getAverageGdpPerCapita('Canada', gapminder)\ngdpMexico <- getAverageGdpPerCapita('Mexico', gapminder)\n\nprint(paste('GDP of USA is', gdpUSA))\n\nprint(paste('GDP of Canada is', gdpCanada))\n\nprint(paste('GDP of Mexico is', gdpMexico))\n\n",
+    "created" : 1510464426066.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "3637514362",
+    "id" : "61E9D69D",
+    "lastKnownWriteTime" : 4326018256,
+    "last_content_update" : 1510468654199,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

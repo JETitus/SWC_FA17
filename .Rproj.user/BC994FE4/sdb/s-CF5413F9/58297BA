@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "# This script computes the GDP for a country using the gapminder data\n\n# clear all variables\nrm(list=ls())\n\n# location of the data\nfilename <- \"../Data/gapminder.txt\"\n\n# read the data file\ngapminder <- read.table(filename, header = TRUE)\n\n# extract gdpPercap from the gapminder data, using a specific country\ngetAverageGdpPerCapita <- function(country) {\n  selectedCountryData <- gapminder[gapminder$country == country, \"gdpPercap\"]\n  mean(selectedCountryData)\n}\n\n# Process large vector of South American Countries\nsouthAmericanCountries <- c('Argentina', 'Bolivia', 'Brazil', 'Chile', 'Colombia', 'Ecuador', 'Paraguay', 'Peru', 'Uruguay', 'Venezuela') \n\n# use sapply to invoke getAverageGdpPerCapita() on all elments of the southAmerican Countries\n\naveragedGdpSouthAmericanCountries <- sapply(southAmericanCountries, getAverageGdpPerCapita)\n\n# sort average GDP by ascending order\naverageGdpSouthAmericanCountries <- averagedGdpSouthAmericanCountries[order(averagedGdpSouthAmericanCountries)]\n\n# Plot the data in a bar plot\nbarplot(averageGdpSouthAmericanCountries,las=2)\n",
+    "created" : 1510503714555.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "419511906",
+    "id" : "58297BA",
+    "lastKnownWriteTime" : 1510506266,
+    "last_content_update" : 1510506266539,
+    "path" : "~/OneDrive/SWC_FA17/R_Lesson2/R_scripts/GetGDPCountry_4.R",
+    "project_path" : "R_Lesson2/R_scripts/GetGDPCountry_4.R",
+    "properties" : {
+        "tempName" : "Untitled5"
+    },
+    "relative_order" : 10,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "# This script computes the average GDP for Albania using the gapminder dataset\n\n# loction of the data\nfilename <- '../Data/gapminder.txt'\n\n# read the data file\ngapminder <- read.table(filename, header = TRUE)\n\n# create a variable to store a country name\ncountryName <- 'Algeria'\n\n# select the rows where the country is (Albania) and store albaniaData\nalbaniaData <- gapminder[gapminder$country == countryName,]\n\n# select the column containing the GDP per capita from our Albania data\nalbaniaGDP <- albaniaData$gdpPercap\n\n# computing the average GDP value\nalbaniaAverageGdp <- mean(albaniaGDP)\n\n# pring a message with the result\nprint(paste(\"The average GDP of\", countryName,'is',albaniaAverageGdp))\n\n",
+    "created" : 1510502198503.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3748382938",
+    "id" : "B839E48A",
+    "lastKnownWriteTime" : 1510503689,
+    "last_content_update" : 1510503689858,
+    "path" : "~/OneDrive/SWC_FA17/R_Lesson2/R_scripts/AlbaniaAvgGDP_2.R",
+    "project_path" : "R_Lesson2/R_scripts/AlbaniaAvgGDP_2.R",
+    "properties" : {
+        "tempName" : "Untitled5"
+    },
+    "relative_order" : 9,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

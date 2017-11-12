@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "southAmericanCountries <- c('Argentina', 'Bolivia', 'Brazil', 'Chile', 'Colombia', 'Ecuador', 'Paraguay', 'Peru', 'Uruguay', 'Venezuela')\n\n# use sapply to invoke getAverageGdpPerCapita() on all elements of southAmericanCountries\naveragedGdpSouthAmericanCountries <- sapply(southAmericanCountries, getAverageGdpPerCapita)\n\n# sort them in ascending order\naveragedGdpSouthAmericanCountries <- averagedGdpSouthAmericanCountries[order(averagedGdpSouthAmericanCountries)]\n\nbarplot(averagedGdpSouthAmericanCountries, las=2)\n",
+    "created" : 1510469728589.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "2463299571",
+    "id" : "669FCD46",
+    "lastKnownWriteTime" : 4294967296,
+    "last_content_update" : 1510469756447,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled4"
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

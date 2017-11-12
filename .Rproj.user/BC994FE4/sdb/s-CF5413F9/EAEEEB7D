@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "countryList <- commandArgs(TRUE)\n\n# location of the data\nfileName <- '../Data/gapminder.txt'\n\n# read gapminder data\ngapminder <- read.table(fileName, header=TRUE)\n\ngetAverageGdpPerCapita <- function(country) {\n  # extract gdpPercap from the gapminder data for the specified country.\n  \n  selectedCountryData <- gapminder[gapminder$country == country, 'gdpPercap']\n  \n  mean(selectedCountryData)\n}\n\naveragedGdp <- sapply(countryList, getAverageGdpPerCapita)\nbarplot(averagedGdp)\n\nprint(averagedGdp)",
+    "created" : 1510496790117.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4185184110",
+    "id" : "EAEEEB7D",
+    "lastKnownWriteTime" : 1510496890,
+    "last_content_update" : 1510496891075,
+    "path" : "~/OneDrive/SWC_FA17/unix_shell/CountryAvgGDP.R",
+    "project_path" : "unix_shell/CountryAvgGDP.R",
+    "properties" : {
+        "tempName" : "Untitled5"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "getAverageGdpPerCapita <- function(country, startYear, endYear) {\n  # extract gdpPercap from the gapminder data for the specified country.\n  \n  selectedCountryData <- gapminder[gapminder$country == country & \n                                     gapminder$year >= startYear & \n                                     gapminder$year <= endYear, 'gdpPercap']\n  \n  mean(selectedCountryData)\n}\n\ngdpUSA <- getAverageGdpPerCapita('United_States', 1980, 1989)\ngdpCanada <- getAverageGdpPerCapita('Canada')\n\nprint(paste('GDP of USA is', gdpUSA))\nprint(paste('GDP of Canada is', gdpCanada))\n\ngetAverageGdpPerCapita <- function(country, startYear = 1952, endYear = 2007) {\n  # extract gdpPercap from the gapminder data for the specified country.\n  \n  selectedCountryData <- gapminder[gapminder$country == country & \n                                     gapminder$year >= startYear & \n                                     gapminder$year <= endYear, 'gdpPercap']\n  \n  mean(selectedCountryData)\n}\n\ngdpUSA <- getAverageGdpPerCapita('United_States', 1980, 1989)\ngdpCanada <- getAverageGdpPerCapita('Canada')\n\nprint(paste('GDP of USA is', gdpUSA))\n",
+    "created" : 1510468633997.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "2468476932",
+    "id" : "84DFB731",
+    "lastKnownWriteTime" : 4306305034,
+    "last_content_update" : 1510468891729,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled3"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

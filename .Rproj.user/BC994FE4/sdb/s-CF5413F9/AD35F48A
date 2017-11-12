@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(ggplot2)\n\nfilename <- \"../Data/gapminder.txt\"\n\ngapminder <- read.table(filename, header = TRUE)\n\nggplot(data = gapminder, aes(x=gdpPercap, y= lifeExp)) +\n  geom_point()\n\n\nggplot(data = gapminder, aes(x=year, y= lifeExp)) +\n  geom_point()\n\nggplot(data = gapminder, aes(x = year, y = lifeExp, color=continent)) +\n  geom_point()\n\nggplot(data = gapminder, aes(x=year, y=lifeExp, by=country, color=continent)) +\n  geom_line()\n\nggplot(data = gapminder, aes(x=year, y=lifeExp, by=country, color=continent)) +\n  geom_line() + geom_point()\n\nggplot(data = gapminder, aes(x=year, y=lifeExp, by=country)) +\n  geom_line(aes(color=continent)) + geom_point()\n\nggplot(data = gapminder, aes(x=year, y=lifeExp, by=country)) +\n  geom_point() + geom_line(aes(color=continent))\n\n\nggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp, color=continent)) +\n  geom_point()                           \n\nggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +\n  geom_point(alpha = 0.5) + scale_x_log10()\n\nggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +\n  geom_point() + scale_x_log10() + geom_smooth(method=\"lm\")\n\nggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +\n  geom_point() + scale_x_log10() + geom_smooth(method=\"lm\", size=1.5)\n\nggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +\n  geom_point(size=3, color=\"orange\") + scale_x_log10() +\n  geom_smooth(method=\"lm\", size=1.5)\n\nggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp, color = continent)) +\n  geom_point(size=3, shape=17) + scale_x_log10() +\n  geom_smooth(method=\"lm\", size=1.5)\n\nstarts.with <- substr(gapminder$country, start = 1, stop = 1)\naz.countries <- gapminder[starts.with %in% c(\"A\", \"Z\"), ]\nggplot(data = az.countries, aes(x = year, y = lifeExp, color=continent)) +\n  geom_line() + facet_wrap( ~ country)\n\nggplot(data = az.countries, aes(x = year, y = lifeExp, color=continent)) +\n  geom_line() + facet_wrap( ~ country) +\n  labs(\n    x = \"Year\",              # x axis title\n    y = \"Life expectancy\",   # y axis title\n    title = \"Figure 1\",      # main title of figure\n    color = \"Continent\"      # title of legend\n  ) +\n  theme(axis.text.x=element_blank(), axis.ticks.x=element_blank())\n\nggplot(data = gapminder, aes(x = gdpPercap, fill=continent)) +\n  geom_density(alpha=0.6) + facet_wrap( ~ year) + scale_x_log10()\n\n# note that you can save plot to variable and plot later\nlibrary(\"dplyr\")\nbubble <- gapminder %>%\n  filter(year == 2007) %>%\n  ggplot(aes(x = gdpPercap,\n             y = lifeExp,\n             color = continent,\n             size = pop)) +\n  geom_point() + \n  labs(\n    x = \"Income\",            # x axis title\n    y = \"Life expectancy\"    # y axis title\n  )\nbubble\n\ninstall.packages(\"plotly\")\nlibrary(plotly)\n        \n# plotly has built in support for `ggplot` objects\nbubble <- gapminder %>%\n        filter(year == 2007) %>%\n        ggplot(aes(x = gdpPercap,\n        y = lifeExp,\n        color = continent,\n        size = pop,\n        text = country)) +\n        geom_point() + \n        labs(\n        x = \"Income\",            # x axis title\n        y = \"Life expectancy\"    # y axis title\n        )\n        \nggplotly(bubble)\n\nfor (yr in unique(gapminder$year)) {\n  bubble <- gapminder %>%\n    filter(year == yr) %>% \n    ggplot(aes(x = gdpPercap,\n               y = lifeExp,\n               color = continent,\n               size = pop)) +\n    geom_point() + \n    labs(\n      x = \"Income\", \n      y = \"Life expectancy\",\n      title = yr\n    ) \n  plot(bubble)    # need to do this in loops\n  Sys.sleep(5)    # 5 sec pause between plots\n}\n",
+    "created" : 1510508194910.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "1657273308",
+    "id" : "AD35F48A",
+    "lastKnownWriteTime" : 4542678336,
+    "last_content_update" : 1510513631028,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled5"
+    },
+    "relative_order" : 11,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
